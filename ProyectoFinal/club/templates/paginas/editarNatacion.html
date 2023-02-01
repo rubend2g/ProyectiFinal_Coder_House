@@ -1,0 +1,22 @@
+{% extends "paginas/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    {% for p in sociosNatacion %}
+
+        <li>{{p}}</li>  
+        <button>
+            <a href="{% url 'eliminarNatacion' p.nombre %}"> Eliminar</a> 
+            <a href="{% url 'editarNatacion' p.nombre %}"> Editar</a>
+        </button>
+
+
+    {% endfor %}
+
+    <br>
+    <a href="natacion">Agregar otro Socio</a>
+
+    
+{% endblock %}
